@@ -6,7 +6,7 @@ from battery.spindler_battery import SpindlerBattery
 from battery.nubbin_battery import NubbinBattery
 
 class CarFactory:
-
+    @staticmethod
     def create_calliope(current_date: date, last_service_date: date, current_mileage: int,
     last_service_mileage:int) -> Car:
         #Calliope takes capulet engine and spindler battery
@@ -15,6 +15,7 @@ class CarFactory:
         calliope = Car(engine, spindler)
         return calliope
 
+    @staticmethod
     def create_glissade(current_date: date, last_service_date: date, current_mileage: int,
     last_service_mileage: int) -> Car:
         #Glissade takes Willoughby engine and spindler Battery
@@ -23,6 +24,7 @@ class CarFactory:
         glissade = Car(engine, spindler)
         return glissade
 
+    @staticmethod
     def create_palindrome(current_date: date, last_service_date: date, warning_light_on: bool):
         #panlindrome takes sternman engine and spindler Battery
         spindler = SpindlerBattery(current_date, last_service_date)
@@ -30,6 +32,7 @@ class CarFactory:
         palindrome = Car(engine, spindler)
         return palindrome
 
+    @staticmethod
     def create_roeschach(current_date: date, last_service_date: date, current_mileage: int, last_service_mileage: int):
         #Rorschach takes in Willoughby engine and nubbin Battery
         nubbin = NubbinBattery(current_date, last_service_date)
@@ -37,6 +40,7 @@ class CarFactory:
         roeschach = Car(engine, nubbin)
         return roeschach
 
+    @staticmethod
     def create_thovex(current_date: date, last_service_date: date, current_mileage: int, last_service_mileage: int):
         #Thovex takes in Capulet Engine and bubbin battery
         nubbin = NubbinBattery(current_date, last_service_date)
